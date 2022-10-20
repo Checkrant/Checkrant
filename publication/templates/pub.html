@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+{% block content %}
+<style>
+    body{
+        background-color: rgb(255, 255, 255);
+    }
+</style>
+    <div class="container">
+        {% for item in items %}
+            <h1>{{ item.nomeRant}}</h1>
+            <p style="margin: 2%; border:solid;">{{ item.tipo }}</p>
+            <button ><a href="{% url 'rate' item.id %}">Avaliar</a></button>
+
+        {% endfor %}
+    </div>
+{% endblock content %}

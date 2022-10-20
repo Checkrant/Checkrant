@@ -1,0 +1,38 @@
+{% extends "main/base.html" %}
+{% block content %}
+<style>
+    body{
+        background-color: rgb(255, 255, 255);
+    }
+</style>
+    <div>
+        <h1>Avaliar o restaurante</h1>
+    </div>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button  class=" btn btn-primary" type="submit">Avaliar</button>
+        </form>
+        <form action = "{% url 'like_rate' '2' %}"
+        method="POST">
+            {% csrf_token %}
+        </form>
+        <br>
+        <br>
+        <button id="likeButton" onclick="increment()">Like</button>
+        
+    </div>
+    <h3> Total de likes:</h3>  <h2 id="counting"></h2>
+    <script>
+        var data = 0;
+        document.getElementById("counting").innerText = data;
+
+        function increment() {
+            data = data + 1;
+            document.getElementById("counting").innerText = data;
+            document.getElementById("likeButton").disabled = true;    
+            alert(`Você curtiu essa avaliação!`);
+        }
+    </script>
+{% endblock content %}

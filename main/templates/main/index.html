@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+{% block content %}<p>CheckRant</p>
+<ul>
+    <label>historia 1</label>
+    <li><a href="{% url 'pub.index' %}">Publicar avaliação</a></li>
+    <label>historia 2</label>
+    <li><a href="{% url 'rant.index' %}">Cadastro de restaurante</a></li>
+    <li><a href="{% url 'user.index' %}">Cadastro de usuario</a></li>
+    <label>historia 3</label>
+    <li><a href="{% url 'comment.index' %}">Comentario</a></li>
+
+</ul>
+{% endblock content %}
