@@ -37,7 +37,6 @@ def like_rate(request,pk):
     post=get_object_or_404(Review, id=request.POST.get('rate_id'))
     post.likes.add(request.user)
     return redirect('success')
-
     
 def success(request):
     return render(request, "success.html")
