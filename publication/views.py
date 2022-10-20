@@ -11,9 +11,16 @@ from django.urls import reverse,reverse_lazy
 def pub(request):
     items = UserRant.objects.all()
     context = {
-        'items':items
+        'items':items,
     }
     return render(request, "pub.html", context)
+
+def viewReview(request):
+    itemsR = Review.objects.all()
+    context = {
+        'itemsR':itemsR
+    }
+    return render(request, "reviews.html", context)
 
 def rate(request, id):
     post = UserRant.objects.get(id=id)
@@ -37,6 +44,7 @@ def like_rate(request,pk):
     post=get_object_or_404(Review, id=request.POST.get('rate_id'))
     post.likes.add(request.user)
     return redirect('success')
-    
+
+
 def success(request):
     return render(request, "success.html")
