@@ -6,7 +6,8 @@ Project created for the Software Development Fundamentals module.
 * [Diego Escorel](https://www.linkedin.com/in/diego-escorel-35164b246/)
 * [Gabriel Lopes](https://www.linkedin.com/in/gabriellopesaraujo/)
 * [Gabriel Galdino](linkedin.com/in/gabriel-galdino-5712b4251)
-* [Henrique Leal](linkedin.com/in/gabriel-galdino-5712b4251)
+* [Henrique Leal](linkedin.com/in/henrique-leal-b24172234)
+* [Bernardo Coutinho](https://www.linkedin.com/in/bernardo-cabral-b539ba252)
 ## What is this project?
 Checkrant is a website used for restaurant evaluation based on users reviews.
 ## How is this project useful?
@@ -35,7 +36,8 @@ Projeto idealizado para a disciplina de Fundamentos de Desenvolvimento de Softwa
 * [Diego Escorel](https://www.linkedin.com/in/diego-escorel-35164b246/)
 * [Gabriel Lopes](https://www.linkedin.com/in/gabriellopesaraujo/)
 * [Gabriel Galdino](linkedin.com/in/gabriel-galdino-5712b4251)
-* [Henrique Leal](linkedin.com/in/gabriel-galdino-5712b4251)
+* [Henrique Leal](linkedin.com/in/henrique-leal-b24172234)
+* [Bernardo Coutinho](https://www.linkedin.com/in/bernardo-cabral-b539ba252)
 ## O que é esse projeto?
 Checkrant é um website usado para a avaliação de restaurantes baseados em avaliações de usuários.
 ## Como esse projeto é útil?
