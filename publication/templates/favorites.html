@@ -1,0 +1,25 @@
+{% extends "main/base.html" %}
+{% block content %}
+<style>
+    body{
+        background-color: rgb(255, 255, 255);
+    }
+</style>
+    <div class="container">
+        {% for item in itemsF %}
+            <h1>{{ item.nomeRant}}</h1>
+            <p style="margin: 2%; border:solid;">{{ item.tipo }}</p>
+            <button id="btn">Favoritar</button>
+            <script>
+            const btn = document.getElementById("btn");
+            btn.addEventListener("click", ()=>{
+            if(btn.innerText === "Favoritar"){
+                
+                btn.innerText = "Desfavoritar";
+            }else{
+                btn.innerText= "Favoritar";}
+});</script>
+
+        {% endfor %}
+    </div>
+{% endblock content %}

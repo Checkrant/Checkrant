@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+{% block content %}
+<style>
+    body{
+        background-color: rgb(255, 255, 255);
+    }
+</style>
+    <div class="container">
+        {% for item in itemsR %}
+            <h1>Autor: {{ item.writer}}</h1>
+            <h1>Restaurante: {{ item.restaurant}}</h1>
+            <p>Avaliação: {{ item.stars }} estrelas</p>
+            <p style="margin: 5%; border:solid;">Detalhes: {{ item.detail }}</p>
+            <button id="likeButton" onclick="increment()">Like</button>
+        <script>
+            var buttons = document.getElementsByTagName('button');
+            for(let i=0;i<buttons.length;i++){  
+                buttons[i].addEventListener('click', function(event){
+                    event.target.disabled = true; 
+                });
+            }
+            function increment() {
+                alert(`Você curtiu essa avaliação!`);
+            }
+        </script>
+        <hr>
+        {% endfor %}
+    </div>
+{% endblock content %}

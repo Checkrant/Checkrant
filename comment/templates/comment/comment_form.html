@@ -1,0 +1,10 @@
+{% extends 'main/base.html'%}
+{% block content %}
+
+<form action = "" method = "POST">
+    <h1>Comentario</h1>
+    {% csrf_token %}
+    {{form.as_p }}
+    <input type="submit" value="Enviar comentario">
+</form>
+{% endblock content %} 
