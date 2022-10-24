@@ -15,8 +15,7 @@ class CommentTest(TestCase):
                                                          email='test@example.com')
         self.user.save()
         self.date = timezone.now()
-        self.comment = Comment(user=self.user,
-                               content='description of the comment',
+        self.comment = Comment(user=self.user, content='description of the comment',
                                data=self.date)
         self.comment.save()
 
@@ -45,4 +44,3 @@ class CommentTest(TestCase):
         data = {'content': comment.content, 'user': comment.user}
         form = CommentForm(data=data)
         self.assertFalse(form.is_valid())
-

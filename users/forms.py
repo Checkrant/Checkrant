@@ -1,16 +1,7 @@
 from django import forms
 from django.forms import fields, models
-from .models import User, UserRant
+from .models import  UserRant
 
-class userForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ['nome', 'email', 'password']
-        labels = {
-            'nome': 'Nome',
-            'email': 'Email',
-            'password': 'Senha',
-        }
 
 class rantForm(forms.ModelForm):
     class Meta:

@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% block content %}<p>CheckRant</p>
+
+    <h2>Seja bem vindo: {{ user.get_full_name|default:user.username }}</h2>
+
+    <ul>
+        <li><a href="{% url 'pub.index' %}">Publicar avaliação</a></li>
+
+        <li><a href="{% url 'rant.index' %}">Cadastro de restaurante</a></li>
+
+        <li><a href="{% url 'comment.index' %}">Comentario</a></li>
+
+        <li><a href="{% url 'main:editar_user' %}">Editar perfil</a></li>
+        
+        <li><a href="{% url 'viewReview.index' %}">Curtidas</a></li>
+
+        <li><a href="{% url 'favorite.index' %}">Favoritar</a></li>
+
+
+    </ul>
+
+
+
+
+
+    <a href="{% url 'main:user_logout' %}">Fazer Logout</a>
+
+
+{% endblock content %}
