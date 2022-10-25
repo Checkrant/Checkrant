@@ -6,4 +6,4 @@ from .forms import CommentForm
 class CommentCreateView(CreateView):
     model = Comment
     form_class = CommentForm
-    success_url = '/#/'
+    success_url = '/profile/'
