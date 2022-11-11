@@ -26,15 +26,16 @@
              {% endif %}
              Total de likes: {{user_like.count}}
             </form>
-            <button id="likeButton" onclick="increment()">Like</button>
-        <script>
-            var buttons = document.getElementsByTagName('button');
-            for(let i=0;i<buttons.length;i++){
-                buttons[i].addEventListener('click', function(event){
-                event.target.disabled = true;});}
-                ;      
-        </script>
-      <hr>
+{#        <script>#}
+{#            var buttons = document.getElementsByTagName('button');#}
+{#            for(let i=0;i<buttons.length;i++){  #}
+{#                buttons[i].addEventListener('click', function(event){#}
+{#                    event.target.disabled = true; #}
+{#                });#}
+{#            }#}
+{#            }#}
+{#        </script>#}
+        <hr>
             {% endwith %}
         {% endfor %}
     </div>
