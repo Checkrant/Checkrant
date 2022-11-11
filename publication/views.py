@@ -1,32 +1,37 @@
 from imp import get_frozen_object
 from pdb import Restart
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from users.models import UserRant
 from .models import Restaurant, Review
 from .forms import ReviewForm
-from django.urls import reverse,reverse_lazy
+from django.urls import reverse, reverse_lazy
 
 
 def pub(request):
     items = UserRant.objects.all()
     context = {
-        'items':items,
+        'items': items,
     }
     return render(request, "pub.html", context)
+
 
 def viewReview(request):
     itemsR = Review.objects.all()
     context = {
-        'itemsR':itemsR
+        'itemsR': itemsR
     }
     return render(request, "reviews.html", context)
+
+
 def favorite(request):
     itemsF = UserRant.objects.all()
     context = {
-        'itemsF':itemsF,
+        'itemsF': itemsF,
     }
     return render(request, "favorites.html", context)
+
+
 def rate(request, id):
     post = UserRant.objects.get(id=id)
     form = ReviewForm(request.POST or None)
@@ -34,30 +39,33 @@ def rate(request, id):
         writer = request.POST.get('writer')
         stars = request.POST.get('stars')
         detail = request.POST.get('detail')
-        review = Review(writer=writer, stars=stars,  detail=detail , restaurant=post)
-        
+        review = Review(writer=writer, stars=stars, detail=detail, restaurant=post)
+
         review.save()
         return redirect('success')
-    
+
     form = ReviewForm()
     context = {
-        "form":form
+        "form": form
     }
-    return render(request, 'rate.html',context)
+    return render(request, 'rate.html', context)
 
-def like_rate(request,pk):
-    post=get_object_or_404(Review, id=request.POST.get('rate_id'))
-    post.likes.add(request.user)
+
+def like_rate(request, id):
+    post = get_object_or_404(Review, id=id)
+    if post.users_likes.filter(id = request.user.id).exists():
+        post.users_likes.remove(request.user)
+    else:
+       post.users_likes.add(request.user)
     return redirect('success')
 
 
 def success(request):
     return render(request, "success.html")
 
-
-
-def add_fav(request,pk):
-    restaurant=get_object_or_404(Review, id=request.POST.get('restaurant_id'))
-    restaurant.favorites.add(request.user)
+def add_fav(request, id):
+    post = get_object_or_404(Review, id=id)
+    post.favorites.add(request.user)
     return redirect('success')
+
 

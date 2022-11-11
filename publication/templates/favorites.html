@@ -7,19 +7,21 @@
 </style>
     <div class="container">
         {% for item in itemsF %}
-            <h1>{{ item.nomeRant}}</h1>
-            <p style="margin: 2%; border:solid;">{{ item.tipo }}</p>
-            <button id="btn">Favoritar</button>
+        <h1>{{ item.nomeRant}}</h1>
+        <p style="margin: 2%; border:solid;">{{ item.tipo }}</p>
+            <button id="likeButton" onclick="increment()">Favoritar</button>
         <script>
-            const btn = document.getElementById("btn");
-            btn.addEventListener("click", ()=>{
-            if(btn.innerText === "Favoritar"){
-                
-                btn.innerText = "Desfavoritar";
-            }else{
-                btn.innerText= "Favoritar";}
-});</script>
-
+            var buttons = document.getElementsByTagName('button');
+            for(let i=0;i<buttons.length;i++){  
+                buttons[i].addEventListener('click', function(event){
+                    event.target.disabled = true; 
+                });
+            }
+            function increment() {
+                alert(`Você Favoritou esse restaurante!`);
+            }
+        </script>
+        <hr>
         {% endfor %}
     </div>
 {% endblock content %}

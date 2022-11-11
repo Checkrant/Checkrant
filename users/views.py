@@ -9,6 +9,6 @@ from publication.models import Restaurant
 class UserRantCreateView(CreateView):
     model = UserRant
     form_class = rantForm
-    success_url = '/profile/'
+    success_url = '/#/'
 
 
