@@ -28,7 +28,6 @@ class Review(models.Model):
     detail = models.TextField(max_length=4000, default="Type here your review.")
     users_likes = models.ManyToManyField(User, related_name="likes")
     restaurant = models.ForeignKey(UserRant, on_delete=models.CASCADE)
-    favorites = models.ManyToManyField(User, related_name="favorites")
     def total_likes(self):
         return self.users_likes.count()
 

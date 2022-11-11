@@ -64,8 +64,12 @@ def success(request):
     return render(request, "success.html")
 
 def add_fav(request, id):
-    post = get_object_or_404(Review, id=id)
-    post.favorites.add(request.user)
+    post = get_object_or_404(UserRant, id=id)
+    if post.favorites.filter(id = request.user.id).exists():
+        post.favorites.remove(request.user)
+    else:
+       post.favorites.add(request.user)
     return redirect('success')
+
 
 

@@ -4,24 +4,32 @@
     body{
         background-color: rgb(255, 255, 255);
     }
+    a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
 </style>
     <div class="container">
+
         {% for item in itemsF %}
-        <h1>{{ item.nomeRant}}</h1>
-        <p style="margin: 2%; border:solid;">{{ item.tipo }}</p>
-            <button id="likeButton" onclick="increment()">Favoritar</button>
+            {% with fave=item.favorites.all %}
+            <h1>{{ item.nomeRant}}</h1>
+            <p style="margin: 2%; border:solid;">{{ item.tipo }}</p>
+             {% if request.user in fave %}
+                <a href="#" class="disabled btn btn-dark"> Favorited  </a>
+             {% else %}
+                  <a href="{% url 'add_fav' item.id %}" class="btn btn-primary"> Favorite  </a>
+             {% endif %}
         <script>
             var buttons = document.getElementsByTagName('button');
-            for(let i=0;i<buttons.length;i++){  
+            for(let i=0;i<buttons.length;i++){
                 buttons[i].addEventListener('click', function(event){
-                    event.target.disabled = true; 
-                });
-            }
-            function increment() {
-                alert(`Você Favoritou esse restaurante!`);
-            }
+                event.target.disabled = true;});}
+                ; 
         </script>
         <hr>
+            {% endwith %}
         {% endfor %}
     </div>
+
 {% endblock content %}
