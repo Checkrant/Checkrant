@@ -8,7 +8,6 @@ class Restaurant(models.Model):
     restaurant_name = models.CharField(max_length=30)
     food_type = models.TextField(max_length=3000)
     rest_pic = models.FileField(upload_to='')
-    favorites = models.ManyToManyField(User, related_name='favorite', default=None, blank=True)
 
     def __str__(self):
         return self.restaurant_name
