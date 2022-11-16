@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-odg$*_!5*220uk$k)9jn8+62zok)qhv07v-jil%hdcgu0(w4s3
 DEBUG = True
 
 ALLOWED_HOSTS =['https://check-restaurant.herokuapp.com/']
-CSRF_TRUSTED_ORIGINS = ['https://check-restaurant.herokuapp.com/', 'https://check-restaurant.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://check-restaurant.herokuapp.com/', 'https://check-restaurant.herokuapp.com', 'https://checkrant.herokuapp.com', 'https://checkrant.herokuapp.com/']
 
 # Application definition
 
