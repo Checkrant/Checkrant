@@ -1,3 +1,40 @@
+# Utilização
+
+      
+
+Instalar o projeto usando o venv é recomendado, porém é possível instalar sem usá-lo também.
+
+Caso não tenha o django instalado ainda execute:
+
+    $ pip3 install django
+    
+
+# Começando
+
+Primeiramente clone esse repositório do Github e entre em seu diretório:
+
+    $ git clone https://github.com/Checkrant/Deploy-Heroku.git
+    $ cd Deploy-Heroku
+    
+Ative o virtualenv no projeto.
+    
+Instale os requirements:
+
+    $ pip install requirements.txt
+    
+    
+Aplique as migrações do banco de dados:
+
+    $ python manage.py migrate
+    
+
+Agora, basta apenas rodar o servidor localmente:
+
+    $ python manage.py runserver
+
+
+
+
 # Checkrant (EN)
 Project created for the Software Development Fundamentals module.
 ## Team:
