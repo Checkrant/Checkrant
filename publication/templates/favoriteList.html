@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}
+{% block content %}
+<style>
+    body{
+        background-color: rgb(255, 255, 255);
+    }
+    a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+</style>
+    <div class="container">
+        <div class="container" style="text-align: center;">
+        <h1>Lista de Favoritos </h1>
+       </div>
+        {% for item in itemsF %}
+            {% with fave=item.favorites.all %}
+            {% if request.user in fave %}
+            <h1>{{ item.nomeRant}}</h1>
+            <p style="margin: 2%; border:solid;"> {{ item.tipo }}</p>
+             {% endif %}
+        <hr>
+            {% endwith %}
+        {% endfor %}
+        <a href="/profile/">Voltar para home</a>
+    </div>
+
+{% endblock content %}

@@ -71,5 +71,12 @@ def add_fav(request, id):
        post.favorites.add(request.user)
     return redirect('success')
 
+def favoriteList(request):
+    itemsL = UserRant.objects.all()
+    context = {
+        'itemsF': itemsL,
+    }
+    return render(request, "favoriteList.html", context) 
+
 
 
