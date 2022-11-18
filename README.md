@@ -4,6 +4,10 @@
 
 Instalar o projeto usando o venv é recomendado, porém é possível instalar sem usá-lo também.
 
+Ative o virtualenv no projeto.
+      $ virtualenv project-env
+      $ source project-env/bin/activate
+
 Caso não tenha o django instalado ainda execute:
 
     $ pip3 install django
@@ -15,10 +19,6 @@ Primeiramente clone esse repositório do Github e entre em seu diretório:
 
     $ git clone https://github.com/Checkrant/Deploy-Heroku.git
     $ cd Deploy-Heroku
-    
-Ative o virtualenv no projeto.
-$ virtualenv project-env
-$ source project-env/bin/activate
     
 Instale os requirements:
 
