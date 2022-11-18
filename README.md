@@ -4,9 +4,10 @@
 
 Instalar o projeto usando o venv é recomendado, porém é possível instalar sem usá-lo também.
 
-Ative o virtualenv no projeto.
-      $ virtualenv project-env
-      $ source project-env/bin/activate
+Ative o virtualenv no projeto:
+
+    $ virtualenv project-env
+    $ source project-env/bin/activate
 
 Caso não tenha o django instalado ainda execute:
 
