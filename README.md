@@ -17,6 +17,8 @@ Primeiramente clone esse repositório do Github e entre em seu diretório:
     $ cd Deploy-Heroku
     
 Ative o virtualenv no projeto.
+$ virtualenv project-env
+$ source project-env/bin/activate
     
 Instale os requirements:
 
