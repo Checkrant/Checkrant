@@ -10,7 +10,7 @@ class RestaurantTest(TestCase):
     def setUp(self):
         self.rest = Restaurant.objects.create(restaurant_name='nomeRestaurante',food_type='testeComida')
         self.rest.save()
-        
+
     def tearDown(self):
         self.rest.delete()
 
@@ -19,7 +19,7 @@ class RestaurantTest(TestCase):
         self.assertEqual(self.rest.food_type, 'testeComida')
 
 class ReviewTest(TestCase):
-    
+
     def setUp(self):
         UserRant.objects.create(username='testeUser', password='teste123', email='test@teste.com', nomeRant='testeRant', endereco='enderecoRant', horarioInicio='10:00', horarioFinal='11:00',
                                 tipo='tipoRant')
@@ -40,4 +40,6 @@ class ReviewTest(TestCase):
 
     def like_test(self):
         self.rev.users_likes.add('usuario2')
-        self.assertEqual(users_likes.count(), 1)
+        self.assertEqual(Review.users_likes.count(), 1)
+        self.rev.users_likes.remove('usuario2')
+        self.assertEqual(Review.users_likes.count(), 0)
