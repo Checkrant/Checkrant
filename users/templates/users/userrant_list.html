@@ -1,0 +1,26 @@
+{% extends 'main/base.html'%}
+{% block content %}
+
+<h1>Lista restaurantes</h1>
+<form action = "?" method = "GET">
+    <input type="text" name="nomeRant" id="" value= "{{ request.GET.nomeRant }}" placeholder="buscar restaurante">
+    <button type="submit">buscar</button>
+</form>
+
+<ul>
+    <!-- Iterate over object_list -->
+    {% for object in object_list %}
+    <!-- Display Objects -->
+    <li>{{ object.nomeRant }}</li>
+    <li>{{ object.endereco }}</li>
+   
+    <hr/>
+    <!-- If object_list is empty  -->
+    {% empty %}
+    <li>Sem restaurantes no momento</li>
+    {% endfor %}
+</ul>
+
+<a href="/profile">voltar para home</a>
+
+{% endblock content %} 
