@@ -3,11 +3,14 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 import time
 from selenium.webdriver.common.by import By
-# Cadastro
+from random import randint
 
+# Cadastro
+x = randint(0,10)
+a = x
 driver = webdriver.Chrome()
 driver.maximize_window()
-driver.get("http://checkrant.herokuapp.com/")
+driver.get("http://localhost:8000/")
 driver.find_element(By.XPATH,'//input[@id="id_first_name"]').send_keys("test")
 driver.find_element(By.XPATH,'//input[@id="id_username"]').send_keys("test")
 driver.find_element(By.XPATH,'//input[@id="id_email"]').send_keys("test@test.com")
@@ -66,14 +69,14 @@ driver.maximize_window()
 driver.find_element(By.XPATH,'/html/body/ul/li[4]/a').click()
 time.sleep(1)
 driver.find_element(By.XPATH,'//*[@id="id_first_name"]').clear()
-driver.find_element(By.XPATH,'//*[@id="id_first_name"]').send_keys("test alterado")
+driver.find_element(By.XPATH,'//*[@id="id_first_name"]').send_keys(f"test {a}")
 driver.find_element(By.XPATH,'//*[@id="id_username"]').clear()
 driver.find_element(By.XPATH,'//*[@id="id_username"]').send_keys("test")
 driver.find_element(By.XPATH,'//*[@id="id_email"]').clear()
 driver.find_element(By.XPATH,'//*[@id="id_email"]').send_keys("test@test.com")
 time.sleep(2)
 driver.find_element(By.XPATH,'/html[1]/body[1]/form[1]/button[1]').click()
-assert 'test alterado' in driver.page_source
+assert (f"test {a}") in driver.page_source
 
 driver.maximize_window()
 driver.find_element(By.XPATH,'/html/body/ul/li[5]/a').click()
