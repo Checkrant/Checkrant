@@ -1,7 +1,7 @@
 {% extends 'main/base.html'%}
 {% block content %}
 
-<h1>Lista restaurantes</h1>
+<h1>Lista de restaurantes</h1>
 <form action = "?" method = "GET">
     <input type="text" name="nomeRant" id="" value= "{{ request.GET.nomeRant }}" placeholder="buscar restaurante">
     <button type="submit">buscar</button>

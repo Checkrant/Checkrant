@@ -1,5 +1,5 @@
 {% extends 'main/base.html' %}
-{% block content %}<p>CheckRant</p>
+{% block content %}<h1>CheckRant</h1>
 
     <h2>Seja bem vindo: {{ user.get_full_name|default:user.username }}</h2>
 
@@ -18,7 +18,7 @@
 
         <li><a href="{% url 'favoriteList.index' %}">Lista de Favoritos</a></li>
         
-        <li><a href="{% url 'rantlist.index' %}">Listar restaurante</a></li>
+        <li><a href="{% url 'rantlist.index' %}">Lista de restaurantes</a></li>
 
 
 
