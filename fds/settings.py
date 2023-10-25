@@ -67,7 +67,7 @@ else:
 DEBUG = True
 
 ALLOWED_HOSTS =['https://check-restaurant.herokuapp.com/']
-CSRF_TRUSTED_ORIGINS = ['https://check-restaurant.herokuapp.com/', 'https://check-restaurant.herokuapp.com', 'https://checkrant.herokuapp.com', 'https://checkrant.herokuapp.com/', 'checkrant.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS = ['https://check-restaurant.herokuapp.com/', 'https://check-restaurant.herokuapp.com', 'https://checkrant.herokuapp.com', 'https://checkrant.herokuapp.com/', 'https://checkrant.azurewebsites.net']
 
 # Application definition
 
